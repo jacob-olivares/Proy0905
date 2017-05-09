@@ -1,9 +1,21 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php 
+    include 'lib/Producto.php';
+    
+    $oProducto1 = new Producto("Nuevo Producto",0,"001");
+    $oProducto2 = new Producto("Nuevo Producto",0,"002");
+    $oProducto3 = new Producto();
+    
+    // Los signos -> es para acceder a una
+    // propidad, similar al pto en Java
+    $oProducto3 ->nombre="Nuevo Producto";
+    $oProducto3->codigo="003";
+    
+    
+    //declaracion de arreglo
+    $aProductos[0]=$oProducto1;
+    $aProductos[1]=$oProducto2;
+    $aProductos[2]=$oProducto3;
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -11,7 +23,11 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        // put your code here
+        
+        foreach ($aProductos as $oPro){
+            echo $oPro->nombre." ".$oPro->codigo." $".$oPro->precio;
+            echo "<br>";
+        }
         ?>
     </body>
 </html>
